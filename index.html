@@ -1,12 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mi Curriculum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #ebcff3;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300px; /* Ancho de la barra lateral */
+            height: 100%;
+            background-color: #6a1b9a; /* Morado */
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 1000; /* Para que esté por encima del resto del contenido */
+            overflow-y: auto; /* Permite desplazamiento si el contenido es largo */
+        }
+        .sidebar h3 {
+            margin-top: 0;
+        }
+        section {
+            margin-left: 320px; /* Ajuste para dejar espacio para la barra lateral */
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff; /* Blanco */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #6a1b9a; /* Morado */
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 45px;
+        }
+        h2{
+            margin: 0;
+            font-size:22PX ;
+        }
+        h3 {
+            margin: 0;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bold;
+            color: #9c27b0;
+            font-size: 23px;
+        }
+        h4{
+            margin:0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #9c27b0;
+            font-size: 26px;
+        }
+        h5{
+            margin: 0;
+            font-weight: bold;
+            line-height: 1.6;
+            font-size: 17px;
+            margin-bottom: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+            cursor: pointer; /* Cambia el cursor a una mano al pasar sobre los elementos */
+        }
+        .progress-container {
+            margin-left: 20px;
+        }
+        progress {
+            width: 400px; /* Ancho de la barra de progreso */
+            height: 30px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 10px;
+            background-image: linear-gradient(to right, #6a1b9a, #9c27b0);
+        }
+        progress::-webkit-progress-value {
+            background-color: #9c27b0; /* Morado */
+            border-radius: 10px;
+        }
+        progress::-webkit-progress-bar {
+            background-color: #eee;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>holaaaa</h1>
+    <div class="sidebar">
+        <h2>Secciones</h2>
+        <ul>
+            <li onclick="scrollToSection('datos-generales')">Datos Generales</li>
+            <br>
+            <li onclick="scrollToSection('formacion-academica')">Formación Académica</li>
+            <br>
+            <li onclick="scrollToSection('dominio-idiomas')">Dominio de Idiomas</li>
+            <br>
+            <li onclick="scrollToSection('conocimiento-programacion')">Conocimiento en programación</li>
+            <br>
+            <li onclick="scrollToSection('datos-sobre-mi')">Datos sobre mí</li>
+        </ul>
+    </div>
+
+    <header>
+        <h1>Mi Curriculum</h1>
+    </header>
     
+    <section id="datos-generales">
+        <h4>Paula Ximena Navarro Ruano</h4>
+        <h2>Estudiante de Ingeniería en Informática y Sistemas</h2>
+        <h5>Correo: Navarropau04@gmail.com</h5>
+        <h5>Teléfono: +502-32781803</h5>
+        
+    </section>
+    <br>
+    <section id="formacion-academica">
+        <fieldset>
+            <legend><h3>Formación Académica</h3></legend>
+            <ul> 
+                <li><h5>Estudios Primarios:</h5> Colegio La Asunción de Guatemala (2012-2017)</li>
+                <li><h5>Estudios Secundarios:</h5> Colegio La Asunción de Guatemala (2018-2020)</li>
+                <li><h5>Bachillerato en Ciencias y Letras:</h5> Colegio La Asunción de Guatemala (2021-2022)</li>
+                <li><h5>Estudios Universitarios:</h5> Universidad Rafael Landívar (2023- actual)</li>
+            </ul>
+        </fieldset>
+    </section>
+    <br>
+    <section id="dominio-idiomas">
+        <fieldset>
+            <legend><h3>Dominio de Idiomas</h3></legend>
+            <ul>
+                <li>Inglés: 
+                    <span class="progress-container">
+                        <progress value="80" max="100">80%</progress>
+                    </span>
+                </li>
+                <li>Español: 
+                    <span class="progress-container">
+                        <progress value="100" max="100">100%</progress>
+                    </span>
+                </li>
+                <li>Francés: 
+                    <span class="progress-container">
+                        <progress value="20" max="100">50%</progress>
+                    </span>
+                </li>
+            </ul>
+        </fieldset>
+    </section>
+    <br>
+    <section id="conocimiento-programacion">
+        <fieldset>
+            <legend><h3>Conocimiento en programación</h3></legend>
+            <ul>
+                <li>Python: 
+                    <span class="progress-container">
+                        <progress value="70" max="100">80%</progress>
+                    </span>
+                </li>
+                <li>C++: 
+                    <span class="progress-container">
+                        <progress value="80" max="100">100%</progress>
+                    </span>
+                </li>
+                <li>C#: 
+                    <span class="progress-container">
+                        <progress value="70" max="100">50%</progress>
+                    </span>
+                </li>
+                <li>HTML: 
+                    <span class="progress-container">
+                        <progress value="50" max="100">50%</progress>
+                    </span>
+                </li>
+            </ul>
+        </fieldset>
+    </section>
+    <br>
+    <section id="datos-sobre-mi">
+        <fieldset>
+            <legend><h3>Datos sobre mí</h3></legend>
+            <ul>
+                <li> Me considero una persona dedicada a su trabajo, se me facilita encontrar soluciones a los problemas planteados.</li>
+                <li> Considero que tengo capacidades comunicativas eficientes al momento de exponer un proyecto</li>
+                <li>Soy una persona muy creativa para solucionar problemas y plantear soluciones en un proyecto dado.</li>
+                <li>Tengo facilidad al momento de adaptarme a nuevos ambientes, ya sean laborales o sociales.</li>
+                <li> Me considero una persona persistente, es decir que busco alcanzar mi objetivo sin importar los obstáculos.</li>
+            </ul>
+        </fieldset>
+    </section>
+    <footer>
+        <br>
+        <br>
+    </footer>
+    <script>
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
 </body>
 </html>
+
