@@ -16,7 +16,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 300px; /* Ancho de la barra lateral */
+            width: 220px; /* Ancho reducido de la barra lateral */
             height: 100%;
             background-color: #6a1b9a; /* Morado */
             color: white;
@@ -25,15 +25,25 @@
             z-index: 1000; /* Para que esté por encima del resto del contenido */
             overflow-y: auto; /* Permite desplazamiento si el contenido es largo */
         }
-        .sidebar h3 {
+        .sidebar h2 {
             margin-top: 0;
+            font-size: 24px; /* Tamaño de fuente para los títulos */
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 18px; /* Tamaño de fuente para los elementos de la lista */
+        }
+        .sidebar li {
+            margin-bottom: 10px;
+            cursor: pointer; /* Cambia el cursor a una mano al pasar sobre los elementos */
         }
         section {
-            margin-left: 320px; /* Ajuste para dejar espacio para la barra lateral */
             padding: 20px;
             border-radius: 10px;
             background-color: #ffffff; /* Blanco */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 20px 20px 240px; /* Ajuste del margen */
         }
         h1 {
             text-align: center;
@@ -44,20 +54,20 @@
         }
         h2{
             margin: 0;
-            font-size:22PX ;
+            font-size: 22px;
         }
         h3 {
             margin: 0;
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-weight: bold;
             color: #9c27b0;
             font-size: 23px;
         }
         h4{
-            margin:0;
+            margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             color: #9c27b0;
-            font-size: 26px;
+            font-size: 24px;
         }
         h5{
             margin: 0;
@@ -94,6 +104,17 @@
             background-color: #eee;
             border-radius: 10px;
         }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%; /* Barra lateral ocupa todo el ancho en dispositivos pequeños */
+                height: auto; /* Altura automática para permitir el desplazamiento */
+                position: static; /* Desactiva la posición fija para que se desplace con el contenido */
+                overflow-y: visible; /* Desactiva el desplazamiento vertical en la barra lateral */
+            }
+            section {
+                margin: 20px; /* Ajuste del margen para dispositivos pequeños */
+            }
+        }
     </style>
 </head>
 <body>
@@ -101,13 +122,9 @@
         <h2>Secciones</h2>
         <ul>
             <li onclick="scrollToSection('datos-generales')">Datos Generales</li>
-            <br>
             <li onclick="scrollToSection('formacion-academica')">Formación Académica</li>
-            <br>
             <li onclick="scrollToSection('dominio-idiomas')">Dominio de Idiomas</li>
-            <br>
             <li onclick="scrollToSection('conocimiento-programacion')">Conocimiento en programación</li>
-            <br>
             <li onclick="scrollToSection('datos-sobre-mi')">Datos sobre mí</li>
         </ul>
     </div>
@@ -121,9 +138,7 @@
         <h2>Estudiante de Ingeniería en Informática y Sistemas</h2>
         <h5>Correo: Navarropau04@gmail.com</h5>
         <h5>Teléfono: +502-32781803</h5>
-        
     </section>
-    <br>
     <section id="formacion-academica">
         <fieldset>
             <legend><h3>Formación Académica</h3></legend>
@@ -135,7 +150,6 @@
             </ul>
         </fieldset>
     </section>
-    <br>
     <section id="dominio-idiomas">
         <fieldset>
             <legend><h3>Dominio de Idiomas</h3></legend>
@@ -158,7 +172,6 @@
             </ul>
         </fieldset>
     </section>
-    <br>
     <section id="conocimiento-programacion">
         <fieldset>
             <legend><h3>Conocimiento en programación</h3></legend>
@@ -186,7 +199,6 @@
             </ul>
         </fieldset>
     </section>
-    <br>
     <section id="datos-sobre-mi">
         <fieldset>
             <legend><h3>Datos sobre mí</h3></legend>
