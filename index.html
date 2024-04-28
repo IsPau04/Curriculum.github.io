@@ -87,11 +87,11 @@
         }
         .progress-container {
             margin-left: 20px;
+            max-width: calc(100% - 30px); /* Ancho máximo ajustado */
         }
         progress {
-            width: 400px; /* Ancho de la barra de progreso */
+            width: calc(100% - 30px); /* Ancho máximo ajustado */
             height: 30px;
-            margin-left: 10px;
             border: none;
             border-radius: 10px;
             background-image: linear-gradient(to right, #6a1b9a, #9c27b0);
@@ -223,4 +223,5 @@
     </script>
 </body>
 </html>
+
 
